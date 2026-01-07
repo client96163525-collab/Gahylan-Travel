@@ -1,29 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [expandedLink, setExpandedLink] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useLanguage();
 
   const navLinks = [
     { name: t('nav.home'), path: '/' },
-    { 
-      name: t('nav.packages'), 
-      path: '#',
-      children: [
-        { name: t('nav.domestic'), path: '/#domestic' },
-        { name: t('nav.international'), path: '/#domestic' },
-        { name: t('nav.trekking'), path: '#' },
-        { name: t('nav.transportation'), path: '#' },
-        { name: t('nav.tours'), path: '#' }
-      ]
-    },
+    { name: t('nav.service'), path: '/services' },
     { name: t('nav.about'), path: '/about' },
     { name: t('nav.contact'), path: '/contact' },
   ];
@@ -31,7 +20,6 @@ const Navbar: React.FC = () => {
   // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
-    setExpandedLink(null);
   }, [location]);
 
   // Handle scroll effect
@@ -44,28 +32,9 @@ const Navbar: React.FC = () => {
   }, []);
 
   const handleNav = (path: string) => {
-    // If it's a dummy link for dropdown, don't do anything in desktop click (handled by hover/click)
-    if (path === '#') return;
-
     setIsOpen(false);
-    if (path.startsWith('/#')) {
-        if (location.pathname !== '/') {
-            navigate('/');
-            setTimeout(() => {
-                const element = document.getElementById(path.substring(2));
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }, 300);
-        } else {
-           const element = document.getElementById(path.substring(2));
-           if (element) element.scrollIntoView({ behavior: 'smooth' });
-        }
-    } else {
-        navigate(path);
-    }
-  };
-
-  const toggleExpand = (name: string) => {
-    setExpandedLink(expandedLink === name ? null : name);
+    navigate(path);
+    window.scrollTo(0, 0);
   };
 
   // Determine navbar text color based on scroll/mobile state
@@ -101,39 +70,14 @@ const Navbar: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden lg:flex space-x-8 items-center">
             {navLinks.map((link) => (
-              <div key={link.name} className="relative group">
-                {link.children ? (
-                  <button
-                    className={`font-subheading text-sm uppercase tracking-wider font-bold flex items-center transition-colors duration-300 ${textColorClass} ${hoverColorClass}`}
-                  >
-                    {link.name}
-                    <ChevronDown className="ml-1 w-4 h-4" />
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => handleNav(link.path)}
-                    className={`font-subheading text-sm uppercase tracking-wider font-bold relative group transition-colors duration-300 ${textColorClass} ${hoverColorClass}`}
-                  >
-                    {link.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-royal transition-all duration-300 group-hover:w-full"></span>
-                  </button>
-                )}
-
-                {/* Dropdown Menu */}
-                {link.children && (
-                  <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100">
-                    {link.children.map((child) => (
-                      <button
-                        key={child.name}
-                        onClick={() => handleNav(child.path)}
-                        className="block w-full text-left px-5 py-3 text-sm font-bold text-gray-800 hover:bg-blue-50 hover:text-royal transition-colors"
-                      >
-                        {child.name}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <button
+                key={link.name}
+                onClick={() => handleNav(link.path)}
+                className={`font-subheading text-sm uppercase tracking-wider font-bold relative group transition-colors duration-300 ${textColorClass} ${hoverColorClass}`}
+              >
+                {link.name}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-royal transition-all duration-300 ${location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+              </button>
             ))}
 
             <button 
@@ -174,28 +118,6 @@ const Navbar: React.FC = () => {
         <div className="px-6 pt-4 pb-8 space-y-3 max-h-[80vh] overflow-y-auto">
           {navLinks.map((link, idx) => (
             <div key={link.name} style={{ transitionDelay: `${idx * 50}ms` }}>
-              {link.children ? (
-                <>
-                  <button
-                    onClick={() => toggleExpand(link.name)}
-                    className="flex items-center justify-between w-full text-left px-5 py-4 rounded-xl text-lg font-bold text-gray-800 hover:text-royal hover:bg-blue-50 transition-all duration-300"
-                  >
-                    {link.name}
-                    <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${expandedLink === link.name ? 'rotate-180 text-gold' : ''}`} />
-                  </button>
-                  <div className={`overflow-hidden transition-all duration-300 bg-gray-50/50 rounded-xl ${expandedLink === link.name ? 'max-h-40 opacity-100 mt-1' : 'max-h-0 opacity-0'}`}>
-                     {link.children.map(child => (
-                        <button
-                          key={child.name}
-                          onClick={() => handleNav(child.path)}
-                          className="block w-full text-left px-8 py-3 text-base font-bold text-gray-700 hover:text-royal"
-                        >
-                           {child.name}
-                        </button>
-                     ))}
-                  </div>
-                </>
-              ) : (
                 <button
                   onClick={() => handleNav(link.path)}
                   className={`flex items-center justify-between w-full text-left px-5 py-4 rounded-xl text-lg font-bold text-gray-800 hover:text-royal hover:bg-blue-50 transition-all duration-300 group ${
@@ -205,7 +127,6 @@ const Navbar: React.FC = () => {
                   {link.name}
                   <ChevronRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all text-gold" />
                 </button>
-              )}
             </div>
           ))}
           

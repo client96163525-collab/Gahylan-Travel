@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import PackageDetails from './pages/PackageDetails';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Services from './pages/Services';
 import AIChatSupport from './components/AIChatSupport';
 import { MessageCircle } from 'lucide-react';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -64,6 +65,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
+              <Route path="services" element={<Services />} />
               <Route path="about" element={<About />} />
               <Route path="package/:id" element={<PackageDetails />} />
               <Route path="contact" element={<Contact />} />

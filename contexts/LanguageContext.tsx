@@ -11,12 +11,12 @@ type Translations = {
 const translations: Translations = {
   // Navigation
   'nav.home': { en: 'Home', hi: 'होम' },
+  'nav.service': { en: 'Service', hi: 'सेवाएं' }, // Renamed from nav.packages
   'nav.domestic': { en: 'Domestic', hi: 'घरेलू' },
   'nav.international': { en: 'International', hi: 'अंतरराष्ट्रीय' },
   'nav.trekking': { en: 'Trekking', hi: 'ट्रेकिंग' },
   'nav.transportation': { en: 'Transportation', hi: 'परिवहन' },
   'nav.tours': { en: 'Tours', hi: 'टूर्स' },
-  'nav.packages': { en: 'Package and Price', hi: 'पैकेज और कीमत' },
   'nav.about': { en: 'About Us', hi: 'हमारे बारे में' },
   'nav.ai_planner': { en: 'AI Planner', hi: 'AI प्लानर' },
   'nav.contact': { en: 'Contact', hi: 'संपर्क करें' },
@@ -64,6 +64,15 @@ const translations: Translations = {
   'packages.subtitle': { en: 'Explore our most booked destinations', hi: 'हमारे सबसे अधिक बुक किए गए गंतव्यों का अन्वेषण करें' },
   'packages.view_all': { en: 'View All Destinations', hi: 'सभी गंतव्य देखें' },
   'packages.starting_from': { en: 'Starting from', hi: 'शुरुआती कीमत' },
+
+  // Services Page
+  'services.hero_title': { en: 'Our Services', hi: 'हमारी सेवाएं' },
+  'services.hero_subtitle': { en: 'From customized tours to seamless transportation.', hi: 'अनुकूलित पर्यटन से लेकर निर्बाध परिवहन तक।' },
+  'services.domestic_title': { en: 'Domestic Packages', hi: 'घरेलू पैकेज' },
+  'services.international_title': { en: 'International Packages', hi: 'अंतरराष्ट्रीय पैकेज' },
+  'services.trekking_title': { en: 'Trekking Expeditions', hi: 'ट्रेकिंग अभियान' },
+  'services.transport_title': { en: 'Transportation Services', hi: 'परिवहन सेवाएं' },
+  'services.tours_title': { en: 'Guided Tours', hi: 'निर्देशित पर्यटन' },
 
   // AI Planner
   'ai.tag': { en: 'AI-Powered Travel Agent', hi: 'AI-संचालित ट्रैवल एजेंट' },

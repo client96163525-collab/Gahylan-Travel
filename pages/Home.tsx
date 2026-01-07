@@ -36,9 +36,11 @@ const Home: React.FC = () => {
                         {/* Internal Glow Blob */}
                         <div className="absolute -right-10 -top-10 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-all duration-700"></div>
                         
-                        <div className="w-12 h-12 md:w-14 md:h-14 bg-royal/5 rounded-2xl flex items-center justify-center mb-6 border border-royal/10 group-hover:border-gold/50 transition-colors shadow-inner">
-                            <item.icon className="w-6 h-6 md:w-7 md:h-7 text-gold group-hover:text-royal transition-all duration-300 group-hover:animate-bounce" />
+                        {/* Animated Icon Container */}
+                        <div className="w-12 h-12 md:w-14 md:h-14 bg-royal/5 rounded-2xl flex items-center justify-center mb-6 border border-royal/10 group-hover:border-gold/50 transition-all duration-500 shadow-inner relative z-10 group-hover:bg-royal group-hover:shadow-[0_0_20px_rgba(10,61,98,0.3)]">
+                            <item.icon className="w-6 h-6 md:w-7 md:h-7 text-gold group-hover:text-white transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-[360deg]" />
                         </div>
+                        
                         <h3 className="font-heading font-bold text-lg text-royal mb-3 tracking-wide">{item.title}</h3>
                         <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                     </div>
