@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { ALL_PACKAGES } from '../constants';
 import { TravelPackage } from '../types';
 import { Clock, MapPin, CheckCircle, Send, ArrowLeft, Users, Calendar, Ticket } from 'lucide-react';
@@ -9,6 +9,7 @@ import { useCurrency } from '../contexts/CurrencyContext';
 const PackageDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   const [pkg, setPkg] = useState<TravelPackage | null>(null);
   const { language, t } = useLanguage();
   const { formatPrice, currency } = useCurrency();
@@ -22,6 +23,16 @@ const PackageDetails: React.FC = () => {
         navigate('/');
     }
   }, [id, navigate]);
+
+  useEffect(() => {
+    // Check if we need to scroll to booking form
+    if (pkg && location.state && (location.state as any).scrollToBooking && formRef.current) {
+        // Small delay to ensure rendering is complete
+        setTimeout(() => {
+            formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 500);
+    }
+  }, [location.state, pkg]);
 
   const scrollToBooking = () => {
     if (formRef.current) {

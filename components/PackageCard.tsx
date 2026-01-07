@@ -17,9 +17,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
   // Handler to go specifically to booking section
   const handleBookNow = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent triggering the card click
-    navigate(`/package/${pkg.id}`);
-    // Ideally pass a state to scroll to booking, or just let the details page handle it.
-    // The details page already has the booking form visible on desktop or button on mobile.
+    navigate(`/package/${pkg.id}`, { state: { scrollToBooking: true } });
   };
 
   return (
