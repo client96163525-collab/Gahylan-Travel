@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { POPULAR_PACKAGES } from '../constants';
+import { ALL_PACKAGES } from '../constants';
 import { TravelPackage } from '../types';
 import { Clock, MapPin, CheckCircle, Send, ArrowLeft, Users, Calendar, Ticket } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -15,7 +15,7 @@ const PackageDetails: React.FC = () => {
   const formRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const found = POPULAR_PACKAGES.find(p => p.id === id);
+    const found = ALL_PACKAGES.find(p => p.id === id);
     if (found) {
         setPkg(found);
     } else {
@@ -63,6 +63,8 @@ Please provide more details.`;
     window.open(`https://wa.me/918050830548?text=${encodeURIComponent(message)}`, '_blank');
   };
 
+  const priceUnit = pkg.priceUnit ? pkg.priceUnit[language] : t('book.per_person');
+
   return (
     <div className="min-h-screen bg-gray-50 pb-20 relative">
       {/* Banner - Reduced Height for 'Short' look */}
@@ -98,7 +100,7 @@ Please provide more details.`;
                     </span>
                     <span className="flex items-center bg-white/90 backdrop-blur-sm px-5 py-2.5 rounded-xl border border-white/10 shadow-lg">
                         <span className="text-2xl font-bold text-royal">{formatPrice(pkg.price)}</span>
-                        <span className="text-[10px] text-gray-500 ml-2 font-semibold uppercase tracking-wider">per person</span>
+                        <span className="text-[10px] text-gray-500 ml-2 font-semibold uppercase tracking-wider">{priceUnit}</span>
                     </span>
                 </div>
             </div>

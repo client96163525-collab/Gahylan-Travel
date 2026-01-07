@@ -5,11 +5,16 @@ export interface LocalizedString {
   hi: string;
 }
 
+export type PackageCategory = 'domestic' | 'international' | 'trekking' | 'transportation' | 'tours';
+
 export interface TravelPackage {
   id: string;
+  category: PackageCategory;
+  featured: boolean;
   title: LocalizedString;
   location: LocalizedString;
   price: number;
+  priceUnit?: LocalizedString; // e.g. "per person", "per day"
   duration: LocalizedString;
   description: LocalizedString;
   image: string;

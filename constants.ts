@@ -1,8 +1,10 @@
 import { TravelPackage, Testimonial } from './types';
 
-export const POPULAR_PACKAGES: TravelPackage[] = [
+export const ALL_PACKAGES: TravelPackage[] = [
   {
     id: 'dubai-luxury',
+    category: 'international',
+    featured: true,
     title: { en: 'Dubai Luxury Escape', hi: 'दुबई लक्ज़री एस्केप' },
     location: { en: 'Dubai, UAE', hi: 'दुबई, संयुक्त अरब अमीरात' },
     price: 45000,
@@ -11,7 +13,6 @@ export const POPULAR_PACKAGES: TravelPackage[] = [
       en: 'Experience the glitz and glamour of Dubai with desert safaris, Burj Khalifa tours, and luxury shopping.',
       hi: 'दुबई की चमक और दमक का अनुभव करें, डेजर्ट सफारी, बुर्ज खलीफा की यात्रा और लक्जरी खरीदारी के साथ।'
     },
-    // Image: High contrast, cinematic Burj Khalifa at dusk (Blue + Gold tones)
     image: 'https://images.unsplash.com/photo-1546412414-e1885259563a?q=80&w=1974&auto=format&fit=crop', 
     rating: 4.8,
     inclusions: {
@@ -48,6 +49,8 @@ export const POPULAR_PACKAGES: TravelPackage[] = [
   },
   {
     id: 'maldives-bliss',
+    category: 'international',
+    featured: true,
     title: { en: 'Maldives Island Bliss', hi: 'मालदीव द्वीप आनंद' },
     location: { en: 'Maldives', hi: 'मालदीव' },
     price: 65000,
@@ -56,7 +59,6 @@ export const POPULAR_PACKAGES: TravelPackage[] = [
       en: 'Relax in a water villa surrounded by turquoise waters. The ultimate honeymoon or relaxation destination.',
       hi: 'फ़िरोज़ा पानी से घिरे वाटर विला में आराम करें। यह एक बेहतरीन हनीमून या विश्राम स्थल है।'
     },
-    // Image: Updated to a reliable, breathtaking water villa shot
     image: 'https://res.cloudinary.com/doehytakj/image/upload/v1767711016/1742800922927_o5dgvk.jpg',
     rating: 4.9,
     inclusions: {
@@ -88,6 +90,8 @@ export const POPULAR_PACKAGES: TravelPackage[] = [
   },
   {
     id: 'goa-vibes',
+    category: 'domestic',
+    featured: true,
     title: { en: 'Goa Beach Party', hi: 'गोवा बीच पार्टी' },
     location: { en: 'Goa, India', hi: 'गोवा, भारत' },
     price: 15000,
@@ -96,7 +100,6 @@ export const POPULAR_PACKAGES: TravelPackage[] = [
       en: 'Sun, sand, and parties. Explore North Goa beaches, forts, and enjoy the nightlife.',
       hi: 'सूरज, रेत और पार्टियां। उत्तरी गोवा के समुद्र तटों, किलों का अन्वेषण करें और नाइटलाइफ़ का आनंद लें।'
     },
-    // Image: Golden hour silhouette of palm trees - Warm/Party vibe
     image: 'https://images.unsplash.com/photo-1560179406-1c6c60e0dc76?q=80&w=1974&auto=format&fit=crop',
     rating: 4.5,
     inclusions: {
@@ -128,6 +131,8 @@ export const POPULAR_PACKAGES: TravelPackage[] = [
   },
   {
     id: 'kedarnath-pilgrimage',
+    category: 'domestic',
+    featured: true,
     title: { en: 'Kedarnath Yatra', hi: 'केदारनाथ यात्रा' },
     location: { en: 'Uttarakhand, India', hi: 'उत्तराखंड, भारत' },
     price: 18000,
@@ -136,7 +141,6 @@ export const POPULAR_PACKAGES: TravelPackage[] = [
       en: 'A spiritual journey to one of the holiest shrines. Helicopter options available.',
       hi: 'सबसे पवित्र तीर्थस्थलों में से एक की आध्यात्मिक यात्रा। हेलीकाप्टर विकल्प उपलब्ध हैं।'
     },
-    // Image: Majestic snow-capped Himalayan peaks - Spiritual/Grand vibe
     image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2070&auto=format&fit=crop',
     rating: 4.7,
     inclusions: {
@@ -170,8 +174,143 @@ export const POPULAR_PACKAGES: TravelPackage[] = [
         desc: { en: 'Departure from Haridwar.', hi: 'हरिद्वार से प्रस्थान।' } 
       }
     ]
+  },
+  // Trekking Packages
+  {
+    id: 'triund-trek',
+    category: 'trekking',
+    featured: false,
+    title: { en: 'Triund Trek', hi: 'त्रियुंड ट्रेक' },
+    location: { en: 'McLeod Ganj, India', hi: 'मैकलॉडगंज, भारत' },
+    price: 1500,
+    duration: { en: '2 Days / 1 Night', hi: '2 दिन / 1 रात' },
+    description: {
+      en: 'A perfect weekend trek offering panoramic views of the Dhauladhar range and Kangra valley.',
+      hi: 'धौलाधार पर्वतमाला और कांगड़ा घाटी के मनोरम दृश्यों की पेशकश करने वाला एक आदर्श सप्ताहांत ट्रेक।'
+    },
+    image: 'https://images.unsplash.com/photo-1531390458853-27663e007822?q=80&w=2070&auto=format&fit=crop',
+    rating: 4.6,
+    inclusions: {
+      en: ['Tents', 'Sleeping Bags', 'All Meals', 'Guide'],
+      hi: ['तंबू', 'स्लीपिंग बैग', 'सभी भोजन', 'गाइड']
+    },
+    itinerary: [
+      {
+        day: 1,
+        title: { en: 'McLeod Ganj to Triund', hi: 'मैकलॉडगंज से त्रियुंड' },
+        desc: { en: '9km trek through rhododendron forests. Camping under stars.', hi: 'रोडोडेंड्रोन जंगलों के माध्यम से 9 किमी ट्रेक। तारों के नीचे कैम्पिंग।' }
+      },
+      {
+        day: 2,
+        title: { en: 'Return to McLeod Ganj', hi: 'मैकलॉडगंज वापसी' },
+        desc: { en: 'Sunrise views. Breakfast and trek down.', hi: 'सूर्योदय के दृश्य। नाश्ता और नीचे उतरना।' }
+      }
+    ]
+  },
+  {
+    id: 'hampta-pass',
+    category: 'trekking',
+    featured: false,
+    title: { en: 'Hampta Pass Trek', hi: 'हमpta पास ट्रेक' },
+    location: { en: 'Manali, India', hi: 'मनाली, भारत' },
+    price: 8500,
+    duration: { en: '5 Days / 4 Nights', hi: '5 दिन / 4 रातें' },
+    description: {
+      en: 'A dramatic crossover trek from the lush green Kullu valley to the barren landscapes of Spiti.',
+      hi: 'हरे भरे कुल्लू घाटी से स्पीति के बंजर परिदृश्य तक एक नाटकीय क्रॉसओवर ट्रेक।'
+    },
+    image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=2076&auto=format&fit=crop',
+    rating: 4.8,
+    inclusions: {
+      en: ['Camping Gear', 'Meals', 'Professional Guide', 'Permits'],
+      hi: ['कैम्पिंग गियर', 'भोजन', 'पेशेवर गाइड', 'परमिट']
+    },
+    itinerary: [
+      {
+        day: 1,
+        title: { en: 'Manali to Jobra', hi: 'मनाली से जोबरा' },
+        desc: { en: 'Drive to Jobra and trek to Chika.', hi: 'जोबरा के लिए ड्राइव और चिका के लिए ट्रेक।' }
+      },
+      {
+        day: 2,
+        title: { en: 'Chika to Balu Ka Ghera', hi: 'चिका से बालू का घेरा' },
+        desc: { en: 'River crossing and meadow walk.', hi: 'नदी पार करना और घास के मैदान में चलना।' }
+      },
+      {
+        day: 3,
+        title: { en: 'Crossing Hampta Pass', hi: 'हमpta पास पार करना' },
+        desc: { en: 'Climb to 14,000ft and descend to Shea Goru.', hi: '14,000 फीट तक चढ़ाई और शीया गोरू तक उतरना।' }
+      },
+      {
+        day: 4,
+        title: { en: 'Shea Goru to Chatru', hi: 'शीया गोरू से छत्रु' },
+        desc: { en: 'Drive to Chandratal Lake.', hi: 'चंद्रताल झील के लिए ड्राइव।' }
+      },
+      {
+        day: 5,
+        title: { en: 'Chatru to Manali', hi: 'छत्रु से मनाली' },
+        desc: { en: 'Return drive to Manali.', hi: 'मनाली वापसी ड्राइव।' }
+      }
+    ]
+  },
+  // Transportation Packages
+  {
+    id: 'innova-rental',
+    category: 'transportation',
+    featured: false,
+    title: { en: 'Premium SUV Rental', hi: 'प्रीमियम एसयूवी रेंटल' },
+    location: { en: 'North India', hi: 'उत्तर भारत' },
+    price: 3500,
+    priceUnit: { en: 'per day', hi: 'प्रति दिन' },
+    duration: { en: 'Flexible', hi: 'लचीला' },
+    description: {
+      en: 'Hire a Toyota Innova Crysta for a comfortable journey. Ideal for family trips to hill stations.',
+      hi: 'आरामदायक यात्रा के लिए टोयोटा इनोवा क्रिस्टा किराए पर लें। हिल स्टेशनों की पारिवारिक यात्राओं के लिए आदर्श।'
+    },
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop',
+    rating: 4.9,
+    inclusions: {
+      en: ['Chauffeur', 'Fuel', 'Toll Taxes', 'State Taxes'],
+      hi: ['chauffeur', 'ईंधन', 'टोल टैक्स', 'राज्य कर']
+    },
+    itinerary: [
+      {
+        day: 1,
+        title: { en: 'Vehicle Details', hi: 'वाहन विवरण' },
+        desc: { en: 'Top model Innova Crysta with Captain Seats. AC/Heater fully functional.', hi: 'कप्तान सीटों के साथ टॉप मॉडल इनोवा क्रिस्टा। एसी/हीटर पूरी तरह कार्यात्मक।' }
+      }
+    ]
+  },
+  {
+    id: 'tempo-traveller',
+    category: 'transportation',
+    featured: false,
+    title: { en: 'Luxury Tempo Traveller', hi: 'लक्ज़री टेम्पो ट्रैवलर' },
+    location: { en: 'Pan India', hi: 'पूरे भारत में' },
+    price: 6500,
+    priceUnit: { en: 'per day', hi: 'प्रति दिन' },
+    duration: { en: 'Flexible', hi: 'लचीला' },
+    description: {
+      en: '12 to 16 Seater luxury tempo traveller for group tours. Push-back seats and ample luggage space.',
+      hi: 'समूह पर्यटन के लिए 12 से 16 सीटर लक्जरी टेम्पो ट्रैवलर। पुश-बैक सीटें और पर्याप्त सामान स्थान।'
+    },
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop',
+    rating: 4.7,
+    inclusions: {
+      en: ['Experienced Driver', 'Music System', 'Pushback Seats', 'Curtains'],
+      hi: ['अनुभवी ड्राइवर', 'संगीत प्रणाली', 'पुशबैक सीटें', 'पर्दे']
+    },
+    itinerary: [
+      {
+        day: 1,
+        title: { en: 'Vehicle Features', hi: 'वाहन सुविधाएँ' },
+        desc: { en: 'Spacious interiors, charging points, and individual AC vents.', hi: 'विशाल अंदरूनी, चार्जिंग पॉइंट और व्यक्तिगत एसी वेंट।' }
+      }
+    ]
   }
 ];
+
+export const POPULAR_PACKAGES = ALL_PACKAGES.filter(pkg => pkg.featured);
 
 export const TESTIMONIALS: Testimonial[] = [
   {
