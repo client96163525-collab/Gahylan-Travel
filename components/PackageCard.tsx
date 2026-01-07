@@ -80,7 +80,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
                 {/* Book Now Button */}
                 <button 
                     onClick={handleBookNow}
-                    className="bg-gold hover:bg-white hover:text-royal text-royal text-xs font-bold px-4 py-2 rounded-lg transition-all duration-300 shadow-lg flex items-center gap-1"
+                    className="bg-gold hover:bg-white hover:text-royal text-royal text-xs font-bold px-4 py-2 rounded-lg transition-all duration-300 shadow-lg flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0"
                 >
                     Book Now
                     <ArrowRight className="w-3 h-3" />

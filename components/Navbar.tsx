@@ -18,7 +18,10 @@ const Navbar: React.FC = () => {
       path: '#',
       children: [
         { name: t('nav.domestic'), path: '/#domestic' },
-        { name: t('nav.international'), path: '/#domestic' } // Currently linking both to the same section as per existing structure
+        { name: t('nav.international'), path: '/#domestic' },
+        { name: t('nav.trekking'), path: '#' },
+        { name: t('nav.transportation'), path: '#' },
+        { name: t('nav.tours'), path: '#' }
       ]
     },
     { name: t('nav.about'), path: '/about' },
