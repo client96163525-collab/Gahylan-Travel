@@ -86,12 +86,12 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center cursor-pointer group relative z-50" onClick={() => navigate('/')}>
              <img 
-              src="https://res.cloudinary.com/doehytakj/image/upload/v1767709555/610944102_1102917845165841_1424140423518677453_n_nooaqt.jpg" 
-              alt="Sahil Tour & Travels" 
+              src="https://res.cloudinary.com/doehytakj/image/upload/v1767774520/567272135_3026504187556589_681659511054053744_n_wiftln.jpg" 
+              alt="Safar X" 
               className="h-10 w-10 md:h-12 md:w-12 rounded-full mr-3 shadow-lg border border-gold/50 object-cover" 
             />
             <span className={`font-heading font-bold text-lg md:text-2xl tracking-wide transition-colors ${logoTextClass} hover:opacity-90`}>
-              Sahil Tour & Travels
+              Safar X
             </span>
           </div>
 

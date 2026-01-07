@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
                         </div>
                         <div>
                             <p className="text-xs text-blue-200 uppercase tracking-wider font-bold mb-1">Phone</p>
-                            <p className="text-lg font-medium">+91 94682 78300</p>
+                            <p className="text-lg font-medium">+91 80508 30548</p>
                             <p className="text-sm text-gray-400 mt-1">Mon-Sun 9am-8pm</p>
                         </div>
                     </div>
@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
                         </div>
                         <div>
                             <p className="text-xs text-blue-200 uppercase tracking-wider font-bold mb-1">Email</p>
-                            <p className="text-lg font-medium">anmolrajput131@gmail.com</p>
+                            <p className="text-lg font-medium">safarx02@gmail.com</p>
                             <p className="text-sm text-gray-400 mt-1">24/7 Online Support</p>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
                         </div>
                         <div>
                             <p className="text-xs text-blue-200 uppercase tracking-wider font-bold mb-1">Office</p>
-                            <p className="text-lg font-medium leading-snug">Sahil Tour & Travels,<br/> Shakti Colony, Karnal,<br/> Haryana 132001</p>
+                            <p className="text-lg font-medium leading-snug">Safar X,<br/> Shakti Colony, Karnal,<br/> Haryana 132001</p>
                         </div>
                     </div>
                 </div>

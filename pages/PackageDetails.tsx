@@ -50,7 +50,7 @@ const PackageDetails: React.FC = () => {
 
     if (!isConfirmed) return;
 
-    const message = `Hi Sahil Tour & Travels, I am interested in *${pkg.title[language]}*.
+    const message = `Hi Safar X, I am interested in *${pkg.title[language]}*.
     
 Name: ${name}
 Travel Date: ${date}
@@ -59,8 +59,8 @@ Currency Preference: ${currency}
 
 Please provide more details.`;
 
-    // Updated number: +91 94682 78300
-    window.open(`https://wa.me/919468278300?text=${encodeURIComponent(message)}`, '_blank');
+    // Updated number: +91 80508 30548
+    window.open(`https://wa.me/918050830548?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
@@ -193,7 +193,7 @@ Please provide more details.`;
                             type="tel" 
                             required 
                             className="w-full border-gray-200 bg-gray-50/50 rounded-xl p-3.5 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all placeholder-gray-400 text-gray-800 font-medium text-sm" 
-                            placeholder="+91 94682 78300" 
+                            placeholder="+91 80508 30548" 
                         />
                     </div>
                     <div>

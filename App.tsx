@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import PackageDetails from './pages/PackageDetails';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import AIChatSupport from './components/AIChatSupport';
 import { MessageCircle } from 'lucide-react';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { CurrencyProvider } from './contexts/CurrencyContext';
@@ -32,6 +33,7 @@ const Layout: React.FC = () => {
       </main>
       <Footer />
       <FloatingButtons />
+      <AIChatSupport />
     </div>
   );
 };
@@ -39,16 +41,16 @@ const Layout: React.FC = () => {
 // Floating Buttons Component
 const FloatingButtons = () => {
   return (
-    // Adjusted bottom spacing to 6 since Chatbot is removed
-    <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-40">
+    // Adjusted bottom spacing to 32 (approx 128px) to avoid overlap with the AI Chat button which is at bottom-6
+    <div className="fixed bottom-32 right-6 flex flex-col gap-4 z-40">
         <a 
-            href="https://wa.me/919468278300" 
+            href="https://wa.me/918050830548" 
             target="_blank" 
             rel="noreferrer"
             className="bg-[#25D366] text-white p-3.5 rounded-full shadow-lg hover:bg-[#20bd5a] transition-all hover:scale-110"
             title="Chat on WhatsApp"
         >
-            <MessageCircle className="w-8 h-8" />
+            <MessageCircle className="w-6 h-6" />
         </a>
     </div>
   );

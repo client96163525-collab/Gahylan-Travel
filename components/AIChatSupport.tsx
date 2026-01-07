@@ -117,7 +117,7 @@ const AIChatSupport: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-heading font-bold text-base">Abhi-X</h3>
-                <p className="text-xs text-blue-200 font-subheading">AI Assistant • Sahil Tour & Travels</p>
+                <p className="text-xs text-blue-200 font-subheading">AI Assistant • Safar X</p>
               </div>
             </div>
             <button onClick={toggleChat} className="text-white/80 hover:text-white transition-colors bg-white/10 rounded-full p-1 hover:bg-white/20">

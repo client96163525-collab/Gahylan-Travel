@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
         {/* Brand */}
         <div className="col-span-1 md:col-span-1">
-          <h3 className="text-3xl font-heading font-bold text-white mb-6">Sahil Tour & Travels</h3>
+          <h3 className="text-3xl font-heading font-bold text-white mb-6">Safar X</h3>
           <p className="text-sm leading-relaxed mb-6 text-gray-400">
             {t('footer.desc')}
           </p>
@@ -53,21 +53,21 @@ const Footer: React.FC = () => {
           <ul className="space-y-4 text-sm">
             <li className="flex items-start group">
               <MapPin className="h-5 w-5 text-gold mr-3 flex-shrink-0 group-hover:animate-bounce" />
-              <span className="text-gray-400 group-hover:text-white transition-colors">Sahil Tour & Travels, Shakti Colony, Karnal, Haryana 132001</span>
+              <span className="text-gray-400 group-hover:text-white transition-colors">Safar X, Shakti Colony, Karnal, Haryana 132001</span>
             </li>
             <li className="flex items-center group">
               <Phone className="h-5 w-5 text-gold mr-3 flex-shrink-0" />
-              <span className="text-gray-400 group-hover:text-white transition-colors">+91 94682 78300</span>
+              <span className="text-gray-400 group-hover:text-white transition-colors">+91 80508 30548</span>
             </li>
             <li className="flex items-center group">
               <Mail className="h-5 w-5 text-gold mr-3 flex-shrink-0" />
-              <span className="text-gray-400 group-hover:text-white transition-colors">anmolrajput131@gmail.com</span>
+              <span className="text-gray-400 group-hover:text-white transition-colors">safarx02@gmail.com</span>
             </li>
           </ul>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-white/10 text-center text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} Sahil Tour & Travels. {t('footer.rights')} {t('footer.gstin')}: 27ABCDE1234F1Z5.
+        &copy; {new Date().getFullYear()} Safar X. {t('footer.rights')} {t('footer.gstin')}: 27ABCDE1234F1Z5.
       </div>
     </footer>
   );

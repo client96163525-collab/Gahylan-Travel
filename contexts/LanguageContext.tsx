@@ -41,12 +41,12 @@ const translations: Translations = {
   'about.vision_desc': { en: 'To be the world’s most trusted partner for premium travel experiences, connecting people with the beauty of the globe.', hi: 'प्रीमियम यात्रा अनुभवों के लिए दुनिया का सबसे भरोसेमंद साथी बनना, लोगों को दुनिया की सुंदरता से जोड़ना।' },
   'about.story': { en: 'Our Story', hi: 'हमारी कहानी' },
   'about.story_subtitle': { en: 'Who We Are', hi: 'हम कौन हैं' },
-  'about.story_desc': { en: 'Founded with a passion for exploration, Sahil Tour & Travels began as a small boutique agency. Today, we stand as a beacon of premium travel, having served thousands of happy travelers across the globe.', hi: 'अन्वेषण के प्रति जुनून के साथ स्थापित, साहिल टूर एंड ट्रैवल्स एक छोटी बुटीक एजेंसी के रूप में शुरू हुई। आज, हम प्रीमियम यात्रा के एक प्रतीक के रूप में खड़े हैं, जिन्होंने दुनिया भर में हजारों खुश यात्रियों की सेवा की है।' },
+  'about.story_desc': { en: 'Founded with a passion for exploration, Safar X began as a small boutique agency. Today, we stand as a beacon of premium travel, having served thousands of happy travelers across the globe.', hi: 'अन्वेषण के प्रति जुनून के साथ स्थापित, Safar X एक छोटी बुटीक एजेंसी के रूप में शुरू हुई। आज, हम प्रीमियम यात्रा के एक प्रतीक के रूप में खड़े हैं, जिन्होंने दुनिया भर में हजारों खुश यात्रियों की सेवा की है।' },
   'about.story_desc_2': { en: 'We believe that travel is the only thing you buy that makes you richer. Our team of experts meticulously crafts every itinerary.', hi: 'हमारा मानना है कि यात्रा ही वह एकमात्र चीज है जिसे आप खरीदते हैं जो आपको अमीर बनाती है। विशेषज्ञों की हमारी टीम हर यात्रा कार्यक्रम को सावधानीपूर्वक तैयार करती है।' },
   'about.team': { en: 'Meet The Leaders', hi: 'नेताओं से मिलें' },
 
   // Why Choose Us
-  'why.title': { en: 'Why Choose Sahil Tour & Travels?', hi: 'Sahil Tour & Travels क्यों चुनें?' },
+  'why.title': { en: 'Why Choose Safar X?', hi: 'Safar X क्यों चुनें?' },
   'why.support': { en: '24/7 Support', hi: '24/7 सहायता' },
   'why.support_desc': { en: 'We are always here for you.', hi: 'हम हमेशा आपके लिए यहाँ हैं।' },
   'why.verified': { en: 'Verified Hotels', hi: 'सत्यापित होटल' },

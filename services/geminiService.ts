@@ -27,7 +27,7 @@ export const getTravelSuggestion = async (
   const currencyInstruction = `Estimated costs should be in ${request.currency === 'USD' ? 'USD ($)' : 'INR (₹)'}.`;
 
   const prompt = `
-    Act as a senior travel consultant for 'Sahil Tour & Travels'.
+    Act as a senior travel consultant for 'Safar X'.
     The user is looking for a travel plan.
     Destination Preference: ${request.destination || "Anywhere"}
     Budget: ${request.budget || "Flexible"}
@@ -114,7 +114,7 @@ export const getChatResponse = async (
   const ai = new GoogleGenAI({ apiKey });
 
   // New formatting instructions for Abhi-X
-  const systemInstruction = `You are Abhi-X, a premium AI travel assistant for 'Sahil Tour & Travels'.
+  const systemInstruction = `You are Abhi-X, a premium AI travel assistant for 'Safar X'.
   
   Your goal is to assist users with booking packages, planning trips, and answering travel queries.
   The current language is ${language === 'hi' ? 'Hindi' : 'English'}.
@@ -126,7 +126,7 @@ export const getChatResponse = async (
   4. Keep the content concise, polite, and professional.
   
   Example Response Structure:
-  **Welcome to Sahil Tour & Travels**
+  **Welcome to Safar X**
   *How can I help you?*
   I can assist you with:
   * Booking a package
