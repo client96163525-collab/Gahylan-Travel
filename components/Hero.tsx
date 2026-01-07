@@ -52,48 +52,48 @@ const Hero: React.FC = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
         
         <div className="animate-fade-in-up max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full border border-gold/40 bg-black/20 backdrop-blur-md mb-6 md:mb-8 hover:bg-black/30 transition-colors">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 md:px-5 md:py-2.5 rounded-full border border-gold/40 bg-black/20 backdrop-blur-md mb-4 md:mb-8 hover:bg-black/30 transition-colors">
                 <Compass className="w-3 h-3 md:w-4 md:h-4 text-gold" />
-                <span className="text-gold text-[10px] md:text-sm font-bold tracking-[0.25em] uppercase">{t('hero.subtitle')}</span>
+                <span className="text-gold text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase">{t('hero.subtitle')}</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white mb-6 md:mb-8 leading-tight drop-shadow-2xl">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white mb-4 md:mb-8 leading-tight drop-shadow-2xl">
               <span className="block">{t('hero.title_start').split(' ')[0]}</span>
-              <span className="block italic font-display text-gold-light mt-1 md:mt-2 text-3xl sm:text-4xl md:text-7xl lg:text-8xl">The Extraordinary</span>
+              <span className="block italic font-display text-gold-light mt-0 md:mt-2 text-2xl sm:text-4xl md:text-7xl lg:text-8xl">The Extraordinary</span>
             </h1>
             
-            <p className="text-gray-100 text-base sm:text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto font-light mb-8 md:mb-12 drop-shadow-md px-4 md:px-0">
+            <p className="text-gray-100 text-sm sm:text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto font-light mb-6 md:mb-12 drop-shadow-md px-2 md:px-0">
               {t('hero.desc')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center w-full sm:w-auto px-6 sm:px-0">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-6 justify-center items-center w-full sm:w-auto px-8 sm:px-0">
                 <button 
                     onClick={handleBookNow}
-                    className="w-full sm:w-auto group relative inline-flex items-center justify-center px-6 py-3 md:px-10 md:py-5 bg-gradient-to-r from-gold to-[#B08D55] text-royal font-bold text-lg md:text-xl rounded-full shadow-[0_0_30px_rgba(197,157,95,0.4)] hover:scale-105 transition-all duration-300 overflow-hidden"
+                    className="w-full sm:w-auto group relative inline-flex items-center justify-center px-6 py-2.5 md:px-10 md:py-5 bg-gradient-to-r from-gold to-[#B08D55] text-royal font-bold text-sm md:text-xl rounded-full shadow-[0_0_30px_rgba(197,157,95,0.4)] hover:scale-105 transition-all duration-300 overflow-hidden"
                 >
                     <span className="relative z-10 flex items-center">
                         {t('nav.book_now')}
-                        <CalendarCheck className="w-5 h-5 md:w-6 md:h-6 ml-2 md:ml-3 group-hover:rotate-12 transition-transform" />
+                        <CalendarCheck className="w-4 h-4 md:w-6 md:h-6 ml-2 md:ml-3 group-hover:rotate-12 transition-transform" />
                     </span>
                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                 </button>
 
                 <button 
                     onClick={handleExplore}
-                    className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:px-10 md:py-5 border-2 border-white/50 text-white font-bold text-lg md:text-xl rounded-full hover:bg-white hover:text-royal hover:border-white transition-all duration-300 backdrop-blur-sm"
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-2.5 md:px-10 md:py-5 border border-white/50 text-white font-bold text-sm md:text-xl rounded-full hover:bg-white hover:text-royal hover:border-white transition-all duration-300 backdrop-blur-sm"
                 >
                     {t('hero.find_plan')}
-                    <Search className="w-5 h-5 md:w-6 md:h-6 ml-2 md:ml-3" />
+                    <Search className="w-4 h-4 md:w-6 md:h-6 ml-2 md:ml-3" />
                 </button>
             </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center opacity-70">
-        <span className="text-white text-[10px] uppercase tracking-widest mb-2">Scroll</span>
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
-            <div className="w-1 h-2 bg-gold rounded-full animate-float"></div>
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center opacity-70">
+        <span className="text-white text-[8px] md:text-[10px] uppercase tracking-widest mb-1 md:mb-2">Scroll</span>
+        <div className="w-4 h-8 md:w-6 md:h-10 border border-white/50 rounded-full flex justify-center p-1">
+            <div className="w-0.5 md:w-1 h-1.5 md:h-2 bg-gold rounded-full animate-float"></div>
         </div>
       </div>
     </div>

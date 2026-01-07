@@ -23,7 +23,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
   return (
     <div 
         onClick={() => navigate(`/package/${pkg.id}`)}
-        className="group relative h-[250px] md:h-[320px] w-full rounded-[1.5rem] overflow-hidden cursor-pointer shadow-premium hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-white"
+        className="group relative h-[200px] md:h-[320px] w-full rounded-[1.2rem] md:rounded-[1.5rem] overflow-hidden cursor-pointer shadow-premium hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-white"
     >
       {/* Background Image - Reduced height impact */}
       <img 
@@ -36,52 +36,52 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
 
       {/* Content Container */}
-      <div className="absolute inset-0 p-5 flex flex-col justify-between">
+      <div className="absolute inset-0 p-4 md:p-5 flex flex-col justify-between">
         
         {/* Top Badges */}
         <div className="flex justify-between items-start">
-            <div className="bg-royal/90 backdrop-blur-sm px-2.5 py-1 rounded-lg flex items-center border border-white/10 shadow-sm">
-                <MapPin className="w-3 h-3 text-gold mr-1" />
-                <span className="text-[10px] font-bold text-white uppercase tracking-wider">{pkg.location[language]}</span>
+            <div className="bg-royal/90 backdrop-blur-sm px-2 py-0.5 md:px-2.5 md:py-1 rounded-md md:rounded-lg flex items-center border border-white/10 shadow-sm">
+                <MapPin className="w-2.5 h-2.5 md:w-3 md:h-3 text-gold mr-1" />
+                <span className="text-[9px] md:text-[10px] font-bold text-white uppercase tracking-wider">{pkg.location[language]}</span>
             </div>
             
-            <div className="bg-white/20 backdrop-blur-md px-2 py-1 rounded-lg flex items-center border border-white/10">
-                <Star className="w-3 h-3 text-gold fill-current mr-1" />
-                <span className="text-xs font-bold text-white">{pkg.rating}</span>
+            <div className="bg-white/20 backdrop-blur-md px-1.5 py-0.5 md:px-2 md:py-1 rounded-md md:rounded-lg flex items-center border border-white/10">
+                <Star className="w-2.5 h-2.5 md:w-3 md:h-3 text-gold fill-current mr-1" />
+                <span className="text-[10px] md:text-xs font-bold text-white">{pkg.rating}</span>
             </div>
         </div>
 
         {/* Bottom Info */}
         <div className="transform transition-transform duration-300 group-hover:-translate-y-1">
-            <h3 className="text-base md:text-xl font-heading text-white mb-1 leading-tight group-hover:text-gold-light transition-colors line-clamp-2">
+            <h3 className="text-sm md:text-xl font-heading text-white mb-0.5 md:mb-1 leading-tight group-hover:text-gold-light transition-colors line-clamp-2">
                 {pkg.title[language]}
             </h3>
             
-            <div className="flex items-center gap-3 text-gray-300 text-[10px] md:text-xs mb-3">
+            <div className="flex items-center gap-2 md:gap-3 text-gray-300 text-[9px] md:text-xs mb-2 md:mb-3">
                  <div className="flex items-center gap-1">
-                    <Clock className="w-3 h-3 text-gold" />
+                    <Clock className="w-2.5 h-2.5 md:w-3 md:h-3 text-gold" />
                     {pkg.duration[language]}
                  </div>
                  <div className="flex items-center gap-1">
-                    <Plane className="w-3 h-3 text-gold" />
+                    <Plane className="w-2.5 h-2.5 md:w-3 md:h-3 text-gold" />
                     Flight Incl.
                  </div>
             </div>
 
             {/* Price & Action Row */}
-            <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10">
+            <div className="flex items-center justify-between mt-1 md:mt-2 pt-1.5 md:pt-2 border-t border-white/10">
                 <div>
-                    <p className="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-wider mb-0.5">{t('packages.starting_from')}</p>
-                    <p className="text-base md:text-lg font-bold text-white">{formatPrice(pkg.price)}</p>
+                    <p className="text-[8px] md:text-[10px] text-gray-400 uppercase tracking-wider mb-0">{t('packages.starting_from')}</p>
+                    <p className="text-sm md:text-lg font-bold text-white">{formatPrice(pkg.price)}</p>
                 </div>
                 
                 {/* Book Now Button */}
                 <button 
                     onClick={handleBookNow}
-                    className="bg-gold hover:bg-white hover:text-royal text-royal text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 rounded-lg transition-all duration-300 shadow-lg flex items-center gap-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 md:transform md:translate-y-4 md:group-hover:translate-y-0"
+                    className="bg-gold hover:bg-white hover:text-royal text-royal text-[9px] md:text-xs font-bold px-2.5 py-1 md:px-4 md:py-2 rounded-lg transition-all duration-300 shadow-lg flex items-center gap-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 md:transform md:translate-y-4 md:group-hover:translate-y-0"
                 >
-                    Book Now
-                    <ArrowRight className="w-3 h-3" />
+                    Book
+                    <ArrowRight className="w-2.5 h-2.5 md:w-3 md:h-3" />
                 </button>
             </div>
         </div>
