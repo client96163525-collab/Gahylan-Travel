@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, MapPin, Star, ArrowRight, Plane, CalendarCheck } from 'lucide-react';
+import { Clock, MapPin, Star, ArrowRight, Plane } from 'lucide-react';
 import { TravelPackage } from '../types';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -23,7 +23,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
   return (
     <div 
         onClick={() => navigate(`/package/${pkg.id}`)}
-        className="group relative h-[280px] md:h-[320px] w-full rounded-[1.5rem] overflow-hidden cursor-pointer shadow-premium hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-white"
+        className="group relative h-[250px] md:h-[320px] w-full rounded-[1.5rem] overflow-hidden cursor-pointer shadow-premium hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-white"
     >
       {/* Background Image - Reduced height impact */}
       <img 
@@ -53,11 +53,11 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
 
         {/* Bottom Info */}
         <div className="transform transition-transform duration-300 group-hover:-translate-y-1">
-            <h3 className="text-lg md:text-xl font-heading text-white mb-1 leading-tight group-hover:text-gold-light transition-colors line-clamp-2">
+            <h3 className="text-base md:text-xl font-heading text-white mb-1 leading-tight group-hover:text-gold-light transition-colors line-clamp-2">
                 {pkg.title[language]}
             </h3>
             
-            <div className="flex items-center gap-3 text-gray-300 text-xs mb-3">
+            <div className="flex items-center gap-3 text-gray-300 text-[10px] md:text-xs mb-3">
                  <div className="flex items-center gap-1">
                     <Clock className="w-3 h-3 text-gold" />
                     {pkg.duration[language]}
@@ -71,14 +71,14 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
             {/* Price & Action Row */}
             <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10">
                 <div>
-                    <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-0.5">{t('packages.starting_from')}</p>
-                    <p className="text-lg font-bold text-white">{formatPrice(pkg.price)}</p>
+                    <p className="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-wider mb-0.5">{t('packages.starting_from')}</p>
+                    <p className="text-base md:text-lg font-bold text-white">{formatPrice(pkg.price)}</p>
                 </div>
                 
                 {/* Book Now Button */}
                 <button 
                     onClick={handleBookNow}
-                    className="bg-gold hover:bg-white hover:text-royal text-royal text-xs font-bold px-4 py-2 rounded-lg transition-all duration-300 shadow-lg flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0"
+                    className="bg-gold hover:bg-white hover:text-royal text-royal text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 rounded-lg transition-all duration-300 shadow-lg flex items-center gap-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 md:transform md:translate-y-4 md:group-hover:translate-y-0"
                 >
                     Book Now
                     <ArrowRight className="w-3 h-3" />

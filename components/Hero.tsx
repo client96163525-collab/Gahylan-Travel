@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Compass, ArrowRight } from 'lucide-react';
+import { Search, Compass, CalendarCheck } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const HERO_IMAGES = [
@@ -18,19 +18,23 @@ const Hero: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIdx((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 5000); // 5 seconds for smoother transitions
+    }, 5000); 
     return () => clearInterval(interval);
   }, []);
 
   const handleExplore = () => {
-    // Scroll to domestic packages
     const element = document.getElementById('domestic');
     if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleBookNow = () => {
+    const element = document.getElementById('planner');
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="relative h-[65vh] min-h-[550px] w-full overflow-hidden flex items-center justify-center">
-      {/* Dynamic Background Slideshow */}
+    <div className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
+      {/* Background Slideshow */}
       {HERO_IMAGES.map((img, index) => (
         <div 
           key={index}
@@ -39,57 +43,57 @@ const Hero: React.FC = () => {
           }`}
           style={{ backgroundImage: `url('${img}')` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-royal via-royal/60 to-transparent mix-blend-multiply opacity-90"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-royal via-royal/40 to-transparent mix-blend-multiply opacity-90"></div>
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
       ))}
 
       {/* Hero Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center lg:text-left flex flex-col lg:flex-row items-center lg:justify-between mt-10">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
         
-        {/* Left: Typography */}
-        <div className="lg:w-1/2 mb-12 lg:mb-0 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/30 bg-gold/10 backdrop-blur-md mb-6">
-                <Compass className="w-4 h-4 text-gold" />
-                <span className="text-gold text-xs font-bold tracking-[0.2em] uppercase">{t('hero.subtitle')}</span>
+        <div className="animate-fade-in-up max-w-5xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full border border-gold/40 bg-black/20 backdrop-blur-md mb-6 md:mb-8 hover:bg-black/30 transition-colors">
+                <Compass className="w-3 h-3 md:w-4 md:h-4 text-gold" />
+                <span className="text-gold text-[10px] md:text-sm font-bold tracking-[0.25em] uppercase">{t('hero.subtitle')}</span>
             </div>
             
-            <h1 className="text-3xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white mb-6 md:mb-8 leading-tight drop-shadow-2xl">
               <span className="block">{t('hero.title_start').split(' ')[0]}</span>
-              <span className="block italic font-display text-gold-light">The Extraordinary</span>
+              <span className="block italic font-display text-gold-light mt-1 md:mt-2 text-3xl sm:text-4xl md:text-7xl lg:text-8xl">The Extraordinary</span>
             </h1>
             
-            <p className="text-gray-300 text-sm lg:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 font-light border-l-2 border-gold pl-6 mb-8">
+            <p className="text-gray-100 text-base sm:text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto font-light mb-8 md:mb-12 drop-shadow-md px-4 md:px-0">
               {t('hero.desc')}
             </p>
 
-            <button 
-                onClick={handleExplore}
-                className="hidden lg:inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold to-[#B08D55] text-royal font-bold text-lg rounded-full shadow-glow hover:scale-105 transition-transform duration-300"
-            >
-                {t('hero.find_plan')}
-                <Search className="w-5 h-5 ml-2" />
-            </button>
-        </div>
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center w-full sm:w-auto px-6 sm:px-0">
+                <button 
+                    onClick={handleBookNow}
+                    className="w-full sm:w-auto group relative inline-flex items-center justify-center px-6 py-3 md:px-10 md:py-5 bg-gradient-to-r from-gold to-[#B08D55] text-royal font-bold text-lg md:text-xl rounded-full shadow-[0_0_30px_rgba(197,157,95,0.4)] hover:scale-105 transition-all duration-300 overflow-hidden"
+                >
+                    <span className="relative z-10 flex items-center">
+                        {t('nav.book_now')}
+                        <CalendarCheck className="w-5 h-5 md:w-6 md:h-6 ml-2 md:ml-3 group-hover:rotate-12 transition-transform" />
+                    </span>
+                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </button>
 
-        {/* Right: Floating Glass Action Card (Modified) */}
-        <div className="lg:w-5/12 w-full animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <div className="glass-panel p-6 lg:p-10 rounded-[2rem] shadow-premium transform lg:rotate-2 hover:rotate-0 transition-all duration-500 text-center">
-                <h3 className="text-xl lg:text-3xl font-heading text-royal mb-4">
-                    Begin Your Journey
-                </h3>
-                <p className="text-gray-600 mb-8 font-light text-sm lg:text-base">
-                    Explore our diverse range of holiday packages curated just for you. From serene beaches to majestic mountains.
-                </p>
-                
                 <button 
                     onClick={handleExplore}
-                    className="w-full py-4 bg-royal text-white font-bold text-base lg:text-lg rounded-xl hover:bg-gold hover:text-white transition-all duration-300 shadow-lg flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:px-10 md:py-5 border-2 border-white/50 text-white font-bold text-lg md:text-xl rounded-full hover:bg-white hover:text-royal hover:border-white transition-all duration-300 backdrop-blur-sm"
                 >
-                    View All Packages
-                    <ArrowRight className="w-5 h-5" />
+                    {t('hero.find_plan')}
+                    <Search className="w-5 h-5 md:w-6 md:h-6 ml-2 md:ml-3" />
                 </button>
             </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center opacity-70">
+        <span className="text-white text-[10px] uppercase tracking-widest mb-2">Scroll</span>
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
+            <div className="w-1 h-2 bg-gold rounded-full animate-float"></div>
         </div>
       </div>
     </div>
